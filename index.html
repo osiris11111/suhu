@@ -28,8 +28,17 @@
             background-image: url('getsuhu_2024022300050330.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            /* Fix for mobile: default to scroll so the image doesn't zoom infinitely */
+            background-attachment: scroll;
         }
+
+        /* Re-enable the fixed parallax effect only for desktop screens */
+        @media (min-width: 768px) {
+            .hero-bg {
+                background-attachment: fixed;
+            }
+        }
+
         .hero-overlay {
             position: absolute;
             inset: 0;
